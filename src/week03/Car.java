@@ -9,17 +9,28 @@ public class Car {
         4. 객체가 가지고 있어야할 행위(메서드)를 정의
      */
 
+    // <필드영역>
+
+    // 1) 고유 데이터 영역
     String company; // 자동차 회사
     String model;   // 자동차 모델
     String color;   // 자동차 색상
     double price;   // 자동차 가격
+
+    // 2) 상태 데이터 영역
     double speed;   // 자동차 속도, km/h
     char gear;  // 기어 상태(P, R, N, D)
     boolean lights; // 자동차 조명 상태
 
+    // 3) 객체 데이터 영역
+    Tire tire;
+    Door door;
+    Handle handle;
+
     // 생성자 - 처음 객체가 생성될 때(인스턴스화) 어떤 로직을 수행해야 하며, 어떤 값이 필수로 들어와야 하는지 정의
     public Car(){
         // 기본생성자 : 생략가능
+        System.out.println("객체 생성을 위한 기본 생성자 호출.");
     }
 
     // <Method>
