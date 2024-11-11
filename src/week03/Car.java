@@ -13,17 +13,17 @@ public class Car {
 
     // 1) 고유 데이터 영역
     String company; // 자동차 회사
-    String model;   // 자동차 모델
+    String model = "Gv80";   // 자동차 모델
     String color;   // 자동차 색상
     double price;   // 자동차 가격
 
     // 2) 상태 데이터 영역
     double speed;   // 자동차 속도, km/h
     char gear;  // 기어 상태(P, R, N, D)
-    boolean lights; // 자동차 조명 상태
+    boolean lights = true; // 자동차 조명 상태
 
     // 3) 객체 데이터 영역
-    Tire tire;
+    Tire tire = new Tire();
     Door door;
     Handle handle;
 
@@ -38,7 +38,8 @@ public class Car {
     // gasPedal
     // input : kmh
     // output : speed
-    double gasPedal(double kmh){
+    double gasPedal(double kmh, char type){
+        changeGear(type);   // 가속도 페달을 밟으면 자동으로 기어가 변한다.
         speed = kmh;
         return speed;
     }
@@ -72,6 +73,13 @@ public class Car {
     // output : x
     void horn(){
         System.out.println("빠아아아아아아앙");
+    }
+
+    // 자동차의 속도 , .. 가변길이 메서드
+    void carSpeeds(double ... speeds){
+        for (double v  : speeds){
+            System.out.println("v = " + v);
+        }
     }
 
 }
