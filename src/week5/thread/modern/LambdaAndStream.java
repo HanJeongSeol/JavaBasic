@@ -22,6 +22,13 @@ public class LambdaAndStream {
         carsWantToPark.add(car4);
         carsWantToPark.add(car5);
 
+
+        // Predicate<T> 인턴페이스의 test 메서드 구현은 람다식과 메서드 참조로 구현할 수 있다.
+
+        // 인터페이스 구현체의 내부적 동작
+//        public boolean test(Car car){
+//            return Car.hasTicket(car);
+//        }
 //        parkingLot.addAll(parkingCarWithTicket(carsWantToPark));
         parkingLot.addAll(parkCars(carsWantToPark, Car::hasTicket));
 //        parkingLot.addAll(parkingCarWithMoney(carsWantToPark));
@@ -125,6 +132,8 @@ class Car {
     }
 }
 
+// 함수형 인터페이스
+// 단 하나의 추상 메서드를 갖는다
 interface Predicate<T> {
     boolean test(T t);
 }
